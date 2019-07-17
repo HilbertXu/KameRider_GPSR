@@ -1,0 +1,9 @@
+<launch>
+  <param name="start_navigating"       default="false" />
+  <param name="start_speech"           default="false" />
+  <param name="start_person_detection" default="false" />
+  <param name="start_object_detection" default="false" />
+  <param name="start_arm_grasp"        default="false" />
+  
+  <group >
+</launch>

@@ -1,0 +1,8 @@
+image: /home/nvidia/catkin_ws/src/kamerider_navigation/maps/2019robocupmap.pgm
+resolution: 0.050000
+origin: [-17.000000, -17.000000, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+angle_init: 0.000000
+

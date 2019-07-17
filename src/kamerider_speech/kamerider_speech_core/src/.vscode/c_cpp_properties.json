@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/kamerider/catkin_ws/devel/include",
+                "/home/kamerider/turtlebot_arm/devel/include",
+                "/home/kamerider/softwares/turtlebot/devel/include",
+                "/home/kamerider/softwares/kobuki/devel/include",
+                "/home/kamerider/softwares/rocon/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/kamerider/catkin_ws/src/kamerider_navigation/include",
+                "/home/kamerider/catkin_ws/src/libuvc_ros/libuvc_camera/include",
+                "/home/kamerider/catkin_ws/src/my_ros_tutorials/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

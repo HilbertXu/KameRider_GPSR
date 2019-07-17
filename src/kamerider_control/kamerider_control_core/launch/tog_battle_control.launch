@@ -1,0 +1,21 @@
+<launch>
+	<!-- start turtlebot and sensors -->
+	<include file="$(find kamerider_control_core)/launch/start_turtle.launch"/>
+	
+	<!-- start sound play node -->
+	<node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+	
+	<!-- start the control node of restaurant task -->
+	<node pkg="kamerider_control_core" type="tog_control.py" name="tog_control" launch-prefix="xterm -e"/>
+<!--
+        <node pkg="kamerider_image_core" type="door_detect" name="door_detect" launch-prefix="xterm -e"/>
+	-->
+	<!-- start navigation part -->
+	<include file="$(find kamerider_navigation_core)/launch/navigation_demo.launch"/>
+	<node pkg="kamerider_navigation_core" type="tog_navigation" name="tog_navigation" launch-prefix="xterm -e"/>
+	
+	<!-- start turtlebot arm part -->
+	<include file="$(find arm)/launch/ed_arm_carry.launch"/>
+       
+
+</launch>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+  <category name="toiletries" defaultLocation="desk" room="bedroom">
+    <object name="shampoo"       difficulty="moderate"                               />
+    <object name="toothpaste"   difficulty="moderate"                               />
+  </category>
+  <category name="food" defaultLocation="diningtable" room="diningroom">
+    <object name="cookie"         difficulty="easy"                                   />
+  </category>
+  <category name="drinks" defaultLocation="rack" room="kitchen">
+    <object name="ice tea"           difficulty="easy"                    canPour="true" />
+    <object name="beer"          difficulty="easy"                                      alcoholic="true" />
+    <object name="coke"          difficulty="easy"                    canPour="true" />
+    <object name="orange juice"         difficulty="easy"                    canPour="true" />
+    <object name="milk"          difficulty="easy"                    canPour="true" />
+  </category>
+</categories>
+
+

@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/kamerider/ros_workspaces/kamerider_GPSR/devel/include",
+                "/home/kamerider/catkin_ws/devel/include",
+                "/home/kamerider/softwares/turtle_packages/turtlebot/devel/include",
+                "/home/kamerider/softwares/turtle_packages/kobuki/devel/include",
+                "/home/kamerider/softwares/turtle_packages/rocon/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/kamerider/ros_workspaces/kamerider_GPSR/src/kamerider_control/kamerider_control_core/include",
+                "/home/kamerider/ros_workspaces/kamerider_GPSR/src/kamerider_image/kamerider_image_core/include",
+                "/home/kamerider/ros_workspaces/kamerider_GPSR/src/kamerider_navigation/kamerider_navigation_core/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

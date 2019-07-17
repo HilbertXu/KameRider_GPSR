@@ -1,0 +1,23 @@
+<!-- 启动所有语音节点的launch file-->
+<launch>
+	<arg name="dict" default="/home/kamerider/kamerider_restaurant/src/kamerider_speech/kamerider_speech_core/GPSR/6534.dic" />
+	<arg name="kws"  default="/home/kamerider/kamerider_restaurant/src/kamerider_speech/kamerider_speech_core/GPSR/gpsr.kwlist" />
+	<param name="is_restart" value="false"/>
+	<!-- 在gpsr中，应该从一开始就等待操作者的指令 -->
+	<param name="wait_for_command" value="true" />
+
+	<include file="$(find pocketsphinx)/launch/kws.launch">
+		<arg name="dict" value="$(arg dict)" />
+		<arg name="kws"  value="$(arg kws)" />
+	</include>
+
+	<!-- 启动截取音频的节点-->
+	<node pkg="kamerider_speech" type="get_audio.py" name="get_audio" launch-prefix="xterm -e" />
+	
+	<!-- 启动科大讯飞识别节点	-->
+	<node pkg="kamerider_speech" type="speech_recognition_fast.py" name="speech_recognition" launch-prefix="xterm -e" respawn="true" respawn_delay="1" />
+
+	<node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+
+	<node pkg="kamerider_speech" type="new_gpsr_control.py" name="gpsr_control" launch-prefix="gnome-terminal -x" />
+</launch>

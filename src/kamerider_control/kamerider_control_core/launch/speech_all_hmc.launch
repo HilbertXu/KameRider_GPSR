@@ -1,0 +1,26 @@
+<!-- 启动所有语音节点的launch file-->
+<launch>
+	<arg name="dict" default="/home/nvidia/catkin_ws/src/pocketsphinx/help-me-carry/2722.dic" />
+	<arg name="lm"  default="/home/nvidia/catkin_ws/src/pocketsphinx/help-me-carry/2722.lm" />
+	<param name="is_restart" value="false" />
+	<!-- 在help-me-carry中，应该在到达室外地点之后才开始等待命令 -->
+	<param name="wait_for_command" value="false" />
+
+	
+	<include file="$(find pocketsphinx)/launch/lm.launch">
+		<arg name="dict" value="$(arg dict)" />
+		<arg name="lm"  value="$(arg lm)" />
+	</include>
+	<include file="$(find turtlebot_follower)/launch/follower.launch">
+	</include>
+	<!-- 启动截取音频的节点-->
+	<node pkg="kamerider_speech" type="get_audio_hmc.py" name="get_audio_hmc" launch-prefix="xterm -e" />
+	
+	<!-- 启动科大讯飞识别节点	-->
+	<node pkg="kamerider_speech" type="speech_recognition.py" name="speech_recognition" launch-prefix="xterm -e" respawn="true" respawn_delay="1" />
+
+	<node pkg="sound_play" type="soundplay_node.py" name="sound_play" launch-prefix="xterm -e" />
+
+	<node pkg="kamerider_speech" type="hmc_control.py" name="hmc_control" launch-prefix="xterm -e" />
+
+</launch>
