@@ -23,11 +23,13 @@ The whole workspace for Team KameRider HouseKeeper General Purpose Service Robot
 
 5. PocketSphinx (Python module) & pyaudio
 
-   sudo apt-get install libsound-dev swig python-pyaudio ros-kinetic-sound-play
+      ```
+      sudo apt-get install libsound-dev swig python-pyaudio ros-kinetic-sound-play
 
-   pip install pyaudio pocketsphinx
+      pip install pyaudio pocketsphinx
 
-   git clone https://github.com/Pankaj-Baranwal/pocketsphinx
+      git clone https://github.com/Pankaj-Baranwal/pocketsphinx
+      ```
 
 6. Turtlebot Description & Hardware:
 
