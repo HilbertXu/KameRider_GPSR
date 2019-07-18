@@ -31,7 +31,7 @@ The whole workspace for Team KameRider HouseKeeper General Purpose Service Robot
 
 6. Turtlebot Description & Hardware:
 
-   ![Screenshot from 2019-06-27 04-54-36](/home/kamerider/Pictures/Screenshot from 2019-06-27 04-54-36.png)
+   ![turtlebot_model](<https://github.com/HilbertXu/KameRider_GPSR/blob/RoboCup2019/src/Prerequirements/images/turtlebot_model.png>)
 
     1. kobuki base
 
@@ -62,7 +62,7 @@ The whole workspace for Team KameRider HouseKeeper General Purpose Service Robot
 
        astra_launch/astra.launch needs to be modified
 
-       ![Screenshot from 2019-07-19 02-45-24](/home/kamerider/Pictures/Screenshot from 2019-07-19 02-45-24.png)
+       ![modified astra launch](<https://github.com/HilbertXu/KameRider_GPSR/blob/RoboCup2019/src/Prerequirements/images/astra_launch.png>)
 
        replace the default value of arg "camera" with "astra" to aviod two nodelet with the same name
 
