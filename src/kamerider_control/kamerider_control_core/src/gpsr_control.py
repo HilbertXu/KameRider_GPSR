@@ -145,7 +145,7 @@ class gpsr_speech_control(object):
 
         # Get parameters
         self.voice = rospy.get_param("~voice", "voice_kal_diphone")
-        self.cmd_files = rospy.get_param("~cmd_file", "/home/nvidia/catkin_ws/src/kamerider_speech/CommonFiles")
+        self.cmd_files = rospy.get_param("~cmd_file", "/home/kamerider/kamerider_GPSR/src/src/kamerider_speech/CommonFiles")
 
         self.sub_image_back_topic_name = rospy.get_param("sub_image_back_topic_name", "/image_to_control")
         self.sub_arm_back_topic_name   = rospy.get_param("sub_arm_back_topic_name", "/arm_to_control")
@@ -382,7 +382,7 @@ class gpsr_speech_control(object):
                             # 到达指定地点之后
                             rospy.loginfo("Start finding object")
                             self.sh.say("Now start findfing object, this may take a long moment, please wait", self.voice)
-                            os.system("sh /home/nvidia/catkin_ws/start_manipulation.sh")
+                            os.system("sh /home/kamerider/kamerider_GPSR/src/start_manipulation.sh")
                             rospy.sleep(20)
                             self.image_process("object" ,self.target_object[0])
                             break
@@ -397,7 +397,7 @@ class gpsr_speech_control(object):
                             self.sh.say("I have back to the operator, here is the target object", self.voice)
                             self.arm_manipulate("release")
                             rospy.sleep(8)
-                            os.system("sh /home/nvidia/catkin_ws/kill_manipulation.sh")
+                            os.system("sh /home/kamerider/kamerider_GPSR/src/kill_manipulation.sh")
                             rospy.sleep(3)
                             break
                     self.init_params()
@@ -421,7 +421,7 @@ class gpsr_speech_control(object):
                             rospy.loginfo("target location arrived")
                             rospy.loginfo("Start find object")
                             self.sh.say("Now start finding object, this may take a moment, please wait", self.voice)
-                            os.system("sh /home/nvidia/catkin_ws/start_manipulation.sh")
+                            os.system("sh /home/kamerider/kamerider_GPSR/src/start_manipulation.sh")
                             rospy.sleep(20)
                             self.image_process("object", self.target_object[0])
                             break
@@ -472,7 +472,7 @@ class gpsr_speech_control(object):
                             self.sh.say("I have found the target person, here is the target object", self.voice)
                             self.arm_manipulate("release")
                             rospy.sleep(8)
-                            os.system("sh /home/nvidia/catkin_ws/kill_manipulation.sh")
+                            os.system("sh /home/kamerider/kamerider_GPSR/src/kill_manipulation.sh")
                             break
                     self.init_params() 
             else:
@@ -489,7 +489,7 @@ class gpsr_speech_control(object):
                         if self._navigate == FINISH:
                             rospy.loginfo("Target object location reached")
                             self.sh.say("Start finding object, this may take a moment, please wait", self.voice)
-                            os.system("sh /home/nvidia/catkin_ws/start_manipulation.sh")
+                            os.system("sh /home/kamerider/kamerider_GPSR/src/start_manipulation.sh")
                             rospy.sleep(20)
                             self.image_process("object")
                             break
@@ -497,7 +497,7 @@ class gpsr_speech_control(object):
                         if self._object == FINISH:
                             rospy.loginfo("I have get the target object, now i will go to".format(self.target_location[0]))
                             self.sh.say("I have get the target object, now i will go to".format(self.target_location[0], self.voice))
-                            os.system("sh /home/nvidia/catkin_ws/kill_manipulation.sh")
+                            os.system("sh /home/kamerider/kamerider_GPSR/src/kill_manipulation.sh")
                             rospy.sleep(4)
                             # @TODO
                             self.navigate_to(self.target_location[0])
