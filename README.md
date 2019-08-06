@@ -82,8 +82,10 @@ The whole workspace for Team KameRider HouseKeeper General Purpose Service Robot
 
        *Replace* the **$(find turtlebot_arm_description)/urdf/turtlebot_arm.urdf.xacro** with the modified file
 
-       
+       *put* the **hokuyo.dae** file into **$(find turtlebot_description)/meshes/sensors**
 
+       
+   
     5. mic & speaker
 
 ## Workspaces Arrangement
