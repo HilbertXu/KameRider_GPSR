@@ -21,6 +21,40 @@ The whole workspace for Team KameRider HouseKeeper General Purpose Service Robot
 
    (Recommand to add build options manually when build the pybind11 to choose the python2.7, because ROS does not support Python3...)
 
+   ***Recommand!!!***
+
+   Maunally compile the openpose to set the ***Python Interpreter version==2.7.14***(default python2)
+
+   ***Because ROS isn't compatible with Python3!!!***
+
+   *Using compile command as listed:*
+
+   (1)  compile ***pybind11***(serve as the bridge between c++ codes and python codes, CMU use this to deploy the python api of OpenPose)
+
+         ```
+         cd $(find openpose)/3rdparty/pybind11
+
+         mkdir build && cd build
+
+         cmake -D PYBIND11_PYTHON_VERSION=2.7 -D PYTHON_EXECUTABLE=/usr/bin/python2.7 -D PYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython2.7m.so ..
+
+         make -j`nproc`
+         ```   
+   
+   (2)  compile ***OpenPose***
+
+         ```
+         cd $(find openpose)
+
+         mkdir build && cd build
+
+         cmake -D BUILD_CAFFE=ON -D BUILD_PYTHON=ON -D PYBIND11_PYTHON_VERSION=2.7 -D PYTHON_EXECUTABLE=/usr/bin/python2.7 -D PYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython2.7m.so ..
+         
+         make -j`nproc`
+         ```
+
+   
+
 5. PocketSphinx (Python module) & pyaudio
 
       ```
